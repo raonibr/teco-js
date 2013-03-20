@@ -5,8 +5,8 @@ define(['../string/trim'],
         poi = function (pathname) {
             var poi_properties, name = "", city = "", state = "";
             poi_properties = pathname.match(
-                /* http://rubular.com/r/8DbITZaScI */
-                /\/local\/(\w{2})\/(\w+)\/\w*?\/\w*?\/(\w+)\.html/
+                /* http://rubular.com/r/kIi2iGRrDE */
+                /\/local\/(\w{2})\/(\w+)\/\w*\/\w*\/(\w+)\.html/
             );
 
             if (isPoiPathname(pathname)) {
@@ -23,9 +23,9 @@ define(['../string/trim'],
             };
         };
         isPoiPathname = function (pathname) {
-            /* http://rubular.com/r/Ad2jwnQbgz */
+            /* http://rubular.com/r/mPqETRwSpG */
             return pathname.match(
-                (/\/local\/\w{2}\/\w+\/\w*?\/\w*?\/\w+\.html/)
+                (/\/local\/\w{2}\/\w+\/\w*\/\w*\/\w+\.html/)
             );
         };
         return {

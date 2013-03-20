@@ -12,7 +12,6 @@ define(['jquery.cookie'], function () {
                 criteria = JSON.parse($.cookie(COOKIE_ID));
             } catch (e) {
             }
-
             return criteria || {};
         }
     };

@@ -132,5 +132,21 @@ require(["apontador/browser/detector"], function (Detector) {
             detector = new Detector(ua.desktop_safari);
             expect(detector.isMobile()).to.not.be.ok();
         });
+
+        it("should fill the resolution with the devicePixelRatio attribute when not given", function () {
+            var detector = new Detector(navigator.userAgent);
+	    var density = (window.devicePixelRatio || 1); // Adding fallback cause IE still does not implement the devicePixelRatio attribute.
+            expect(detector.resolution).to.eql(density);
+        });
+
+        it("should detect normal resoltion displays", function () {
+            var detector = new Detector(navigator.userAgent,1);
+            expect(detector.isRetina()).to.not.be.ok();
+        });
+
+        it("should detect high resoltion displays", function () {
+            var detector = new Detector(navigator.userAgent,2);
+            expect(detector.isRetina()).to.be.ok();
+        });
     });
 });
